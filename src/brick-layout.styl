@@ -1,9 +1,8 @@
 @import '../bower_components/brick-common/styles/mixins'
 @import '../bower_components/brick-common/styles/params'
 
-x-layout {
+brick-layout {
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
@@ -24,7 +23,7 @@ x-layout {
   flex-direction: column;
 }
 
-x-layout[horizontal] {
+brick-layout[horizontal] {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -35,26 +34,11 @@ x-layout[horizontal] {
   flex-direction: row;
 }
 
-x-layout > [flex] {
+brick-layout > [flex] {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   overflow: auto;
-  //  DON'T ERASE THIS: although this gets overridden by the flex display
-  // * render, this fixes an issue with older browsers (ex: FF18) where unless
-  // * a flex item was height 0, it would refuse to shrink past the auto
-  // * height of the content, preventing the scrollbar from appearing
-  // height: 0;
-  // position: relative;
 }
-
-// x-layout > [flex] > *:only-child{
-//    fix for issue where 100% height children of flex items render as zero
-//   * height in Webkit
-//   * see: http://stackoverflow.com/a/15389545
-
-//   height: 100%;
-//   position: absolute;
-// }

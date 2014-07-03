@@ -1,8 +1,6 @@
-x-layout {
+brick-layout {
   display: -webkit-box;
 /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-/* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;
 /* TWEENER - IE 10 */
   display: -webkit-flex;
@@ -27,7 +25,7 @@ x-layout {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-x-layout[horizontal] {
+brick-layout[horizontal] {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -37,7 +35,7 @@ x-layout[horizontal] {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-x-layout > [flex] {
+brick-layout > [flex] {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -webkit-flex: 1;
