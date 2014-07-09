@@ -32,6 +32,7 @@ Attribute           | Options     | Default      | Description
 ---                 | ---         | ---          | ---
 `horizontal`        | *boolean*   | -            | Use a horizontal instead of the default vertical layout.
 `horizontal-min-[s/m/l]`  | *boolean*   | -            | Use a horizontal instead of the default vertical layout starting at a page width of 768/992/1200px.
+`open`              | *boolean*   | -            | Open child drawer elements.
 
 Attributes on child-elements | Options     | Default      | Description
 ---                          | ---         | ---          | ---
@@ -39,8 +40,17 @@ Attributes on child-elements | Options     | Default      | Description
 `flex-min-[s/m/l]`           | *boolean*   | -            | Set flex:1 for thsi element starting at a page of 768/992/1200px.
 `drawer`                     | *boolean*   | -            | use this element as a drawer. drawer can he hidden and shown by setting the `show` attribute.
 `drawer-max-[s/m/l]`         | *boolean*   | -            | use this element as a drawer up to page size of 768/992/1200px.
-`drawer-top`                     | *boolean*   | -            | use this element as a drawer sliding in from the top. drawer can he hidden and shown by setting the `show` attribute.
-`drawer-top-max-[s/m/l]`         | *boolean*   | -            | use this element as a drawer sliding in from the top up to page size of 768/992/1200px.
+`drawer-top`                 | *boolean*   | -            | use this element as a drawer sliding in from the top. drawer can he hidden and shown by setting the `show` attribute.
+`drawer-top-max-[s/m/l]`     | *boolean*   | -            | use this element as a drawer sliding in from the top up to page size of 768/992/1200px.
+
+
+## Methods
+
+Method          | Parameters   | Returns     | Description
+---             | ---          | ---         | ---
+`toggleDrawer()`|              |             | Toggle the drawer state.
+`openDrawer()`  |              |             | Open the drawer.
+`closeDrawer()` |              |             | close the drawer.
 
 ## Development
 

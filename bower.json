@@ -22,5 +22,8 @@
   "dependencies": {
     "brick-common": "*",
     "platform": "Polymer/platform"
+  },
+  "devDependencies": {
+    "brick-action": "mozbrick/brick-action"
   }
 }
