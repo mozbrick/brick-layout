@@ -64,7 +64,7 @@ brick-layout {
   }
   responsify("& > ", drawer, max, _drawer)
   // show state
-  &[show] {
+  &[open] {
     & > [drawer],
     & > [drawer-max-{$1.name}],
     & > [drawer-max-{$2.name}],
@@ -80,7 +80,7 @@ brick-layout {
     width: 100%;
   }
   responsify("& > ", drawer-top, max, _drawertop)
-  &[show] {
+  &[open] {
     & > [drawer-top],
     & > [drawer-top-max-{$1.name}],
     & > [drawer-top-max-{$2.name}],
