@@ -29,7 +29,6 @@
       #nav {
         background-color: orange;
       }
-
       @media (min-width: 768px) {
         #menu-button {
           display: none;
@@ -46,7 +45,7 @@
         <button id="menu-button">M</button> header
       </header>
 
-      <brick-layout horizontal flex>
+      <brick-layout id="content" horizontal flex>
 
         <brick-layout id="nav" drawer-max-s>
           <span>111111111</span>
@@ -62,5 +61,16 @@
 
     </brick-layout>
 
+    <script>
+      var drawerLayout = document.getElementById("content");
+      var menuButton = document.getElementById("menu-button");
+      menuButton.addEventListener("click", function(){
+        if (drawerLayout.hasAttribute("show")) {
+          drawerLayout.removeAttribute("show");
+        } else {
+          (drawerLayout.setAttribute("show",""));
+        }
+      });
+    </script>
   </body>
 </html>
