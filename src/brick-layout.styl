@@ -65,6 +65,7 @@ brick-layout {
   responsify("& > ", drawer, max, _drawer)
   // show state
   &[show] {
+    & > [drawer],
     & > [drawer-max-{$1.name}],
     & > [drawer-max-{$2.name}],
     & > [drawer-max-{$3.name}] {
@@ -80,6 +81,7 @@ brick-layout {
   }
   responsify("& > ", drawer-top, max, _drawertop)
   &[show] {
+    & > [drawer-top],
     & > [drawer-top-max-{$1.name}],
     & > [drawer-top-max-{$2.name}],
     & > [drawer-top-max-{$3.name}] {

@@ -95,6 +95,7 @@ brick-layout > [drawer] {
   transform: translate(-100%, 0);
   transition: transform 0.2s ease;
 }
+brick-layout[show] > [drawer]
 brick-layout[show] > [drawer-max-s],
 brick-layout[show] > [drawer-max-m],
 brick-layout[show] > [drawer-max-l] {
