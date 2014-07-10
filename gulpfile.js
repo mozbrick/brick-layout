@@ -27,7 +27,7 @@ gulp.task('lint', function() {
 
 gulp.task('styles', function() {
   gulp.src(paths.stylesheets)
-    .pipe(stylus())
+    .pipe(stylus({errors: true}))
     .pipe(concat('brick-layout.css'))
     .pipe(gulp.dest('src'));
 });
