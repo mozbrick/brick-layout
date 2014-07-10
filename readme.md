@@ -34,15 +34,21 @@ Attribute           | Options     | Default      | Description
 `horizontal-min-[s/m/l]`  | *boolean*   | -            | Use a horizontal instead of the default vertical layout starting at a page width of 768/992/1200px.
 `open`              | *boolean*   | -            | Open child drawer elements.
 
-Attributes on child-elements | Options     | Default      | Description
+Attributes on direct child-elements | Options     | Default      | Description
 ---                          | ---         | ---          | ---
-`flex`                       | *boolean*   | -            | Set flex:1 for thsi element.
-`flex-min-[s/m/l]`           | *boolean*   | -            | Set flex:1 for thsi element starting at a page of 768/992/1200px.
+`flex`                       | *boolean*   | -            | Set flex:1 for this element.
 `drawer`                     | *boolean*   | -            | use this element as a drawer. drawer can he hidden and shown by setting the `show` attribute.
-`drawer-max-[s/m/l]`         | *boolean*   | -            | use this element as a drawer up to page size of 768/992/1200px.
 `drawer-top`                 | *boolean*   | -            | use this element as a drawer sliding in from the top. drawer can he hidden and shown by setting the `show` attribute.
-`drawer-top-max-[s/m/l]`     | *boolean*   | -            | use this element as a drawer sliding in from the top up to page size of 768/992/1200px.
 
+All those attributes can also be set as `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]`, for example: `drawer-lt-s`.
+Attributes declared with `attr-lt-[s/m/l]` are active up to the specified page width.
+Attribites declared with `attr-gt-[xs/s/m]` are active above the specified page width.
+Attribites declared with `attr-[xs/s/m]` are active at the specified page width.
+
+Attributes on descendent elements | Options     | Default      | Description
+`hide`                            | *boolean*   | -            | Set display: none for this element. 
+
+Hide can also be used with the `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]` pattern.
 
 ## Methods
 
