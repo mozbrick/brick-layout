@@ -21,6 +21,9 @@ brick-layout {
    *  Flex-children
    *--------------------------------------------------*/
 /**
+   *  hide
+   *--------------------------------------------------*/
+/**
    *  Drawer
    *--------------------------------------------------*/
 }
@@ -127,6 +130,49 @@ brick-layout[horizontal] {
 brick-layout > [flex] {
   flex: 1;
   overflow: auto;
+}
+@media (max-width: 768px) {
+  brick-layout [hide-lt-s] {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  brick-layout [hide-lt-m] {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  brick-layout [hide-lt-l] {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  brick-layout [hide-gt-xs] {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  brick-layout [hide-gt-s] {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  brick-layout [hide-gt-m] {
+    display: none;
+  }
+}
+@media (max-width: 768px) and (min-width: 992px) {
+  brick-layout [hide-s] {
+    display: none;
+  }
+}
+@media (max-width: 992px) and (min-width: 1200px) {
+  brick-layout [hide-m] {
+    display: none;
+  }
+}
+brick-layout [hide] {
+  display: none;
 }
 @media (max-width: 768px) {
   brick-layout > [drawer-lt-s] {
