@@ -41,20 +41,20 @@ Attribute           | Type        | Description
 
 Attribute     | Options     | Description
 ---           | ---         | ---
-`flex`        | *boolean*   | Set 'flex: 1' for this element.
-`drawer`      | *boolean*   | Use this element as a drawer. Drawers can he hidden and shown by setting the `show` attribute on the parent &lt;brick-layout&gt.
+`flex`        | *boolean*   | Set `flex: 1` for this element.
+`drawer`      | *boolean*   | Use this element as a drawer. Drawers can he hidden and shown by setting the `show` attribute on the parent `<brick-layout>`.
 
 
 ### Attributes on descendent elements
 Attribute        | Options     | Description
 ---              | ---         | ---
-`hide`           | *boolean*   | Set `display: none` for this element. 
+`hide`           | *boolean*   | Hide this element. 
 
 ### Attributes and page widths
 
 All mentioned attributes except open can be set to only apply on certain page widths:
 
-atttribute      | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
+Attribute       | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
 ---             | ---          | ---         | ---          | ---
 attribute       | **yes**      | **yes**     | **yes**      | **yes**
 attribute-xs    | **yes**      | no          | no           | no
@@ -82,8 +82,8 @@ Method          | Description
 
 ## Examples
 
-[Drawer](http://mozbrick.github.io/examples/brick-layout/drawer.html)
-[Tabs](http://mozbrick.github.io/examples/brick-layout/tabs.html)
+* [Drawer](http://mozbrick.github.io/examples/brick-layout/drawer.html)
+* [Tabs](http://mozbrick.github.io/examples/brick-layout/tabs.html)
 
 ## Development
 
