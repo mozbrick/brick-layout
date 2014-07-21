@@ -91,9 +91,9 @@ Method          | Description
 * Headerbar on the top of the page taking up all the page width and as much vertical space as it needs to.
 * Below the Header:
   * Menu on the left side, taking up as much space as the menu items need
-  * Content on taking up the rest of the space
+  * Content taking up the rest of the space
 
-[Demo](http://mozbrick.github.io/examples/brick-layout/basic-1.html)
+[Demo](http://mozbrick.github.io/examples/brick-layout/simple.html)
 
 ##### Code
 
@@ -132,7 +132,7 @@ To add the menu and the content horizontally positioned next to each other, we r
   </brick-layout>
 </brick-layout>
 ```
-    
+
 To make it all work we need some css. We do not want to have a `padding` and `margin` outside of our layout and we want our layout to be able fill the whole page, so we add the following css to the html and body.
 
 ```css
@@ -143,7 +143,7 @@ html, body {
 }
 ```
 
-To visualize out layout we add some borders:
+To visualize the layout we add some borders:
 
 ```css
 header {
@@ -156,11 +156,185 @@ header {
 
 #### Columns
 
+##### Description
 
+* Split the page equally into 4 columns
+
+[Demo](http://mozbrick.github.io/examples/brick-layout/columns.html)
+
+##### Code
+
+```html
+<brick-layout horizontal>
+  <div class="column" flex>1</div>
+  <div class="column" flex>2</div>
+  <div class="column" flex>3</div>
+  <div class="column" flex>4</div>
+</brick-layout>
+```
+
+```css
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.column {
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+.columns:first-of-type {
+  border: none;
+}
+```
 
 ### Responsive Examples
-* [Drawer](http://mozbrick.github.io/examples/brick-layout/drawer.html)
-* [Tabs](http://mozbrick.github.io/examples/brick-layout/tabs.html)
+
+#### Drawer
+
+##### Description
+
+* Headerbar on the top of the page
+* Below the Header:
+  * Menu on the left side, turns into a drawer when the page-width is below 768px.
+  * Menu-Button to control the Menu when the page-width is below 768px.
+  * Content taking up the rest of the space
+
+[Demo](http://mozbrick.github.io/examples/brick-layout/drawer.html)
+
+##### Code
+
+```html
+<brick-layout>
+  <header>
+    <brick-action target="main" action="toggleDrawer">
+      <button hide-gt-xs>M</button>
+    </brick-action>
+    Brick Layout Example: Simple responsive Drawer
+  </header>
+  <brick-layout horizontal id="main" flex>
+    <brick-menu id="menu" drawer-lt-s>
+      <brick-menu-item selected>Menu Item 1</brick-menu-item>
+      <brick-menu-item>Menu Item 2</brick-menu-item>
+      <brick-menu-item>Menu Item 3</brick-menu-item>
+    </brick-menu>
+    <div id="article" flex>
+      article
+    </div>
+  </brick-layout>
+</brick-layout>
+```
+
+```css
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+#header {
+  border-bottom: 1px solid #ccc;
+  padding: 12px 9px 9px 9px;
+}
+#menu {
+  border-right: 1px solid #ccc;
+  padding: 9px;
+  background: white;
+}
+#menu brick-menu-item {
+  padding: 3px 0;
+}
+#menu brick-menu-item[selected] {
+  font-weight: bold;
+}
+#article {
+  padding: 9px;
+}
+```
+
+#### Tabs
+
+* Headerbar on the top of the page
+* Below the Header:
+  * Menu on the left side, turns into a tabbar at the bottom of the page when the page-width is below 768px.
+  * Content taking up the rest of the space
+
+##### Description
+
+[Demo](http://mozbrick.github.io/examples/brick-layout/tabs.html)
+
+##### Code
+
+````html
+<brick-layout>
+  <header>
+    Brick Layout Example: Responsive Tabs
+  </header>
+  <brick-layout horizontal-gt-xs flex>
+    <brick-menu id="menu" horizontal-lt-s>
+      <brick-action selected target="card1" action="reveal">
+        Menu Item 1
+      </brick-action>
+      <brick-action target="card2" action="reveal">
+        Menu Item 2
+      </brick-action>
+      <brick-action target="card3" action="reveal">
+        Menu Item 3
+      </brick-action>
+    </brick-menu>
+    <brick-deck id="content" flex selected-index="0">
+      <brick-card id="card1" selected>1</brick-card>
+      <brick-card id="card2">2</brick-card>
+      <brick-card id="card3">3</brick-card>
+    </brick-deck>
+  </brick-layout>
+</brick-layout>
+```
+
+```css
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+#header {
+  border-bottom: 1px solid #ccc;
+  padding: 12px 9px 9px 9px;
+}
+#menu {
+  border-right: 1px solid #ccc;
+  background: white;
+}
+#menu > * {
+  padding: 9px;
+  width: 100%;
+}
+#menu [selected] {
+  font-weight: bold;
+}
+brick-card {
+  padding: 9px;
+  font-size: 6em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #content {
+    order: 1;
+  }
+  #menu {
+    border: none;
+    border-top: 1px solid #ccc;
+    order: 2;
+  }
+  #menu > * {
+    border-left: 1px solid #ccc;
+  }
+  #menu > *:first-child {
+    border-left: none;
+  }
+}
+```
+
 
 ## Development
 
