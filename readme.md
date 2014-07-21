@@ -46,23 +46,24 @@ Attribites declared with `attr-gt-[xs/s/m]` are active above the specified page 
 Attribites declared with `attr-[xs/s/m]` are active at the specified page width.
 
 Attributes on descendent elements | Options     | Default      | Description
+---                               | ---         | ---          | ---
 `hide`                            | *boolean*   | -            | Set display: none for this element. 
 
 Hide can also be used with the `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]` pattern.
 
 atttribute      | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
 ---             | ---          | ---         | ---          | ---
-attribute       | yes          | yes         | yes          | yes
-attribute-xs    | yes          | no          | no           | no
-attribute-s     | no           | yes         | no           | no
-attribute-m     | no           | no          | yes          | no
-attribute-l     | no           | no          | no           | yes
-attribute-lt-s  | yes          | no          | no           | no
-attribute-lt-m  | yes          | yes         | no           | no
-attribute-lt-l  | yes          | yes         | yes          | no
-attribute-gt-xs | no           | yes         | yes          | yes
-attribute-gt-s  | no           | no          | yes          | yes
-attribute-gt-m  | no           | no          | no           | yes
+attribute       | **yes**      | **yes**     | **yes**      | **yes**
+attribute-xs    | **yes**      | no          | no           | no
+attribute-s     | no           | **yes**     | no           | no
+attribute-m     | no           | no          | **yes**      | no
+attribute-l     | no           | no          | no           | **yes**
+attribute-lt-s  | **yes**      | no          | no           | no
+attribute-lt-m  | **yes**      | **yes**     | no           | no
+attribute-lt-l  | **yes**      | **yes**     | **yes**      | no
+attribute-gt-xs | no           | **yes**     | **yes**      | **yes**
+attribute-gt-s  | no           | no          | **yes**      | **yes**
+attribute-gt-m  | no           | no          | no           | **yes**
 
 
 ## Methods
