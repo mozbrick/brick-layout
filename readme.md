@@ -97,8 +97,8 @@ Method          | Description
 
 ##### Code
 
-  We start with the outmost `brick-layout` to split the page vertically into the Header and the rest below it. We insert a `header` and a `div`.
-  To make the header take up as much space as it needs and the rest below we put the attribute `flex` on the div below the `header`.
+We start with the outmost `brick-layout` to split the page vertically into the Header and the rest below it. We insert a `header` and a `div`.
+To make the header take up as much space as it needs and the rest below we put the attribute `flex` on the div below the `header`.
 
     ```html
     <brick-layout>
@@ -111,8 +111,8 @@ Method          | Description
     </brick-layout>
     ```
 
-  To add the menu and the content horizontally positioned next to each other, we replace the `div` with another `brick-layout` this time with the attribute `horizontal`. Inside we add a `div` for the menu and one for the content. We also add the attribute `flex` to the content-div.
-  
+To add the menu and the content horizontally positioned next to each other, we replace the `div` with another `brick-layout` this time with the attribute `horizontal`. Inside we add a `div` for the menu and one for the content. We also add the attribute `flex` to the content-div.
+
     ```html
     <brick-layout>
       <header>
@@ -132,7 +132,8 @@ Method          | Description
       </brick-layout>
     </brick-layout>
     ```
-  To make it all work we need some css. We do not want to have a `padding` and `margin` outside of our layout and we want our layout to be able fill the whole page, so we add the following css to the html and body.
+    
+To make it all work we need some css. We do not want to have a `padding` and `margin` outside of our layout and we want our layout to be able fill the whole page, so we add the following css to the html and body.
 
     ```css
     html, body {
@@ -141,8 +142,9 @@ Method          | Description
       height: 100%;
     }
     ```
-    
-  To visualize out layout we add some borders:
+
+To visualize out layout we add some borders:
+
     ```css
     header {
       border-bottom: 1px solid #ccc;
