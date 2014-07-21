@@ -88,10 +88,10 @@ Method          | Description
 
 ##### Description
 
-* Headerbar on the top of the page taking up all the page width and as much vertical space as it needs to.
+* Headerbar on the top of the page.
 * Below the Header:
-  * Menu on the left side, taking up as much space as the menu items need
-  * Content taking up the rest of the space
+  * Menu on the left side, taking up as much space as the menu items need.
+  * Content taking up the rest of the space.
 
 [Demo](http://mozbrick.github.io/examples/brick-layout/simple.html)
 
@@ -194,11 +194,11 @@ html, body {
 
 ##### Description
 
-* Headerbar on the top of the page
+* Headerbar on the top of the page.
 * Below the Header:
   * Menu on the left side, turns into a drawer when the page-width is below 768px.
   * Menu-Button to control the Menu when the page-width is below 768px.
-  * Content taking up the rest of the space
+  * Content taking up the rest of the space.
 
 [Demo](http://mozbrick.github.io/examples/brick-layout/drawer.html)
 
@@ -253,10 +253,10 @@ html, body {
 
 #### Tabs
 
-* Headerbar on the top of the page
+* Headerbar on the top of the page.
 * Below the Header:
   * Menu on the left side, turns into a tabbar at the bottom of the page when the page-width is below 768px.
-  * Content taking up the rest of the space
+  * Content taking up the rest of the space.
 
 ##### Description
 
