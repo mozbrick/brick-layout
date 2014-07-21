@@ -100,59 +100,59 @@ Method          | Description
 We start with the outmost `brick-layout` to split the page vertically into the Header and the rest below it. We insert a `header` and a `div`.
 To make the header take up as much space as it needs and the rest below we put the attribute `flex` on the div below the `header`.
 
-    ```html
-    <brick-layout>
-      <header>
-        Brick-Layout Basic Examples: Simple
-      </header>
-      <div flex> 
-        <!-- menu and content will go here -->
-      </div>
-    </brick-layout>
-    ```
+```html
+<brick-layout>
+  <header>
+    Brick-Layout Basic Examples: Simple
+  </header>
+  <div flex> 
+    <!-- menu and content will go here -->
+  </div>
+</brick-layout>
+```
 
 To add the menu and the content horizontally positioned next to each other, we replace the `div` with another `brick-layout` this time with the attribute `horizontal`. Inside we add a `div` for the menu and one for the content. We also add the attribute `flex` to the content-div.
 
-    ```html
-    <brick-layout>
-      <header>
-        Brick-Layout Basic Examples: Simple
-      </header>
-      <brick-layout horizontal flex>
-        <div id="menu">
-          <ul>
-            <li>Menu Item 1</li>
-            <li>Menu Item 2</li>
-            <li>Menu Item 3</li>
-          </ul>
-        </div>
-        <div id="content" flex>
-          Content goes here.
-        </div>
-      </brick-layout>
-    </brick-layout>
-    ```
+```html
+<brick-layout>
+  <header>
+    Brick-Layout Basic Examples: Simple
+  </header>
+  <brick-layout horizontal flex>
+    <div id="menu">
+      <ul>
+        <li>Menu Item 1</li>
+        <li>Menu Item 2</li>
+        <li>Menu Item 3</li>
+      </ul>
+    </div>
+    <div id="content" flex>
+      Content goes here.
+    </div>
+  </brick-layout>
+</brick-layout>
+```
     
 To make it all work we need some css. We do not want to have a `padding` and `margin` outside of our layout and we want our layout to be able fill the whole page, so we add the following css to the html and body.
 
-    ```css
-    html, body {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-    }
-    ```
+```css
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+```
 
 To visualize out layout we add some borders:
 
-    ```css
-    header {
-      border-bottom: 1px solid #ccc;
-    }
-    #menu {
-      border-right: 1px solid #ccc;
-    }
-    ```
+```css
+header {
+  border-bottom: 1px solid #ccc;
+}
+#menu {
+  border-right: 1px solid #ccc;
+}
+```
 
 #### Columns
 
