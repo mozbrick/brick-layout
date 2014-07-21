@@ -26,30 +26,33 @@
     <brick-layout></brick-layout>
     ```
 
+    See [Examples](#Examples) for detailed examples.
+
 ## Options
 
-Attribute           | Options     | Default      | Description
----                 | ---         | ---          | ---
-`horizontal`        | *boolean*   | -            | Use a horizontal instead of the default vertical layout.
-`horizontal-min-[s/m/l]`  | *boolean*   | -            | Use a horizontal instead of the default vertical layout starting at a page width of 768/992/1200px.
-`open`              | *boolean*   | -            | Open child drawer elements.
+### Attributes on &lt;brick-layout&gt;
 
-Attributes on direct child-elements | Options     | Default      | Description
----                          | ---         | ---          | ---
-`flex`                       | *boolean*   | -            | Set flex:1 for this element.
-`drawer`                     | *boolean*   | -            | use this element as a drawer. drawer can he hidden and shown by setting the `show` attribute.
-`drawer-top`                 | *boolean*   | -            | use this element as a drawer sliding in from the top. drawer can he hidden and shown by setting the `show` attribute.
+Attribute           | Type        | Description
+---                 | ---         | ---
+`horizontal`        | *boolean*   | Use a horizontal layout instead of the default vertical layout.
+`open`              | *boolean*   | Open child drawer elements.
 
-All those attributes can also be set as `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]`, for example: `drawer-lt-s`.
-Attributes declared with `attr-lt-[s/m/l]` are active up to the specified page width.
-Attribites declared with `attr-gt-[xs/s/m]` are active above the specified page width.
-Attribites declared with `attr-[xs/s/m]` are active at the specified page width.
+### Attributes on direct child-elements
 
-Attributes on descendent elements | Options     | Default      | Description
----                               | ---         | ---          | ---
-`hide`                            | *boolean*   | -            | Set display: none for this element. 
+Attribute     | Options     | Description
+---           | ---         | ---
+`flex`        | *boolean*   | Set 'flex: 1' for this element.
+`drawer`      | *boolean*   | Use this element as a drawer. Drawers can he hidden and shown by setting the `show` attribute on the parent &lt;brick-layout&gt.
 
-Hide can also be used with the `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]` pattern.
+
+### Attributes on descendent elements
+Attribute        | Options     | Description
+---              | ---         | ---
+`hide`           | *boolean*   | Set `display: none` for this element. 
+
+### Attributes and page widths
+
+All mentioned attributes except open can be set to only apply on certain page widths:
 
 atttribute      | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
 ---             | ---          | ---         | ---          | ---
@@ -65,14 +68,22 @@ attribute-gt-xs | no           | **yes**     | **yes**      | **yes**
 attribute-gt-s  | no           | no          | **yes**      | **yes**
 attribute-gt-m  | no           | no          | no           | **yes**
 
+Example:
+
+The attribute `hide-gt-xs` hides an element when the page-width is greater than 768px.
 
 ## Methods
 
-Method          | Parameters   | Returns     | Description
----             | ---          | ---         | ---
-`toggleDrawer()`|              |             | Toggle the drawer state.
-`openDrawer()`  |              |             | Open the drawer.
-`closeDrawer()` |              |             | close the drawer.
+Method          | Description
+---             | ---
+`toggleDrawer()`| Toggle the drawer state.
+`openDrawer()`  | Open the drawer.
+`closeDrawer()` | Close the drawer.
+
+## Examples
+
+[Drawer](http://mozbrick.github.io/examples/brick-layout/drawer.html)
+[Tabs](http://mozbrick.github.io/examples/brick-layout/tabs.html)
 
 ## Development
 
