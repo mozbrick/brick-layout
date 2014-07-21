@@ -51,6 +51,7 @@ Attributes on descendent elements | Options     | Default      | Description
 Hide can also be used with the `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]` pattern.
 
                 | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
+---             | ---          | ---         | ---          |
 attribute       | yes          | yes         | yes          | yes
 attribute-xs    | yes          | no          | no           | no
 attribute-s     | no           | yes         | no           | no
