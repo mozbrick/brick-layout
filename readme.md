@@ -52,7 +52,7 @@ Attribute        | Type        | Description
 
 ### Attributes and page widths
 
-All mentioned attributes except open can be set to only apply on certain page widths:
+All mentioned attributes except `open` can be set to only apply on certain page widths:
 
 Attribute         | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
 ---               | ---          | ---         | ---          | ---
