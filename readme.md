@@ -54,19 +54,19 @@ Attribute        | Type        | Description
 
 All mentioned attributes except open can be set to only apply on certain page widths:
 
-Attribute       | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
----             | ---          | ---         | ---          | ---
-attribute       | **yes**      | **yes**     | **yes**      | **yes**
-attribute-xs    | **yes**      | no          | no           | no
-attribute-s     | no           | **yes**     | no           | no
-attribute-m     | no           | no          | **yes**      | no
-attribute-l     | no           | no          | no           | **yes**
-attribute-lt-s  | **yes**      | no          | no           | no
-attribute-lt-m  | **yes**      | **yes**     | no           | no
-attribute-lt-l  | **yes**      | **yes**     | **yes**      | no
-attribute-gt-xs | no           | **yes**     | **yes**      | **yes**
-attribute-gt-s  | no           | no          | **yes**      | **yes**
-attribute-gt-m  | no           | no          | no           | **yes**
+Attribute         | < 768px (xs) | ≥ 768px (s) | ≥ 992px (m)  | ≥ 1200px (l)
+---               | ---          | ---         | ---          | ---
+`attribute`       | **yes**      | **yes**     | **yes**      | **yes**
+`attribute-xs`    | **yes**      | no          | no           | no
+`attribute-s`     | no           | **yes**     | no           | no
+`attribute-m`     | no           | no          | **yes**      | no
+`attribute-l`     | no           | no          | no           | **yes**
+`attribute-lt-s`  | **yes**      | no          | no           | no
+`attribute-lt-m`  | **yes**      | **yes**     | no           | no
+`attribute-lt-l`  | **yes**      | **yes**     | **yes**      | no
+`attribute-gt-xs` | no           | **yes**     | **yes**      | **yes**
+`attribute-gt-s`  | no           | no          | **yes**      | **yes**
+`attribute-gt-m`  | no           | no          | no           | **yes**
 
 Example:
 
