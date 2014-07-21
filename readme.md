@@ -39,14 +39,14 @@ Attribute           | Type        | Description
 
 ### Attributes on direct child-elements
 
-Attribute     | Options     | Description
+Attribute     | Type        | Description
 ---           | ---         | ---
 `flex`        | *boolean*   | Set `flex: 1` for this element.
 `drawer`      | *boolean*   | Use this element as a drawer. Drawers can he hidden and shown by setting the `show` attribute on the parent `<brick-layout>`.
 
 
 ### Attributes on descendent elements
-Attribute        | Options     | Description
+Attribute        | Type        | Description
 ---              | ---         | ---
 `hide`           | *boolean*   | Hide this element. 
 
