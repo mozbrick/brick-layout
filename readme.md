@@ -17,7 +17,7 @@
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="src/brick-layout.html">
+    <link rel="import" href="dist/brick-layout.html">
     ```
 
 3. Start using it:
@@ -48,7 +48,7 @@ Attribute     | Type        | Description
 ### Attributes on descendent elements
 Attribute        | Type        | Description
 ---              | ---         | ---
-`hide`           | *boolean*   | Hide this element. 
+`hide`           | *boolean*   | Hide this element.
 
 ### Attributes and page widths
 
@@ -105,7 +105,7 @@ To make the header take up as much space as it needs and the rest below we put t
   <header>
     Brick-Layout Basic Examples: Simple
   </header>
-  <div flex> 
+  <div flex>
     <!-- menu and content will go here -->
   </div>
 </brick-layout>

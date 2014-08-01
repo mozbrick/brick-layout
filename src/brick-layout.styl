@@ -1,5 +1,4 @@
-// not using "transparent" prefixing for now
-// @import '../bower_components/brick-common/styles/mixins'
+@import '../bower_components/brick-common/styles/mixins'
 @import '../bower_components/brick-common/styles/params'
 
 $xs = {                end:  768px, name: xs }
@@ -47,7 +46,50 @@ responsify(selector, attr, content) {
   }
 }
 
-brick-layout {
+/**
+ * notice the () around teh attribute. that is because of
+ * :host([attr]) syntax to style the host node.
+ *
+ * example:
+ *  &([horizontal-lt-s/m/l]) { mixin() }
+ *  &([horizontal-gt-xs/s/m]) { mixin() }
+ *  &([horizontal-xs/s/m/l]) { mixin() }
+ *  &([horizontal]) { mixin() }
+ * would be created by:
+ * responsifyHost("& > ", horizontal, mixin)
+ */
+responsifyHost(selector, attr, content) {
+  // attr-lt-[s,m,l]
+  for $range in $s $m $l {
+    {selector}([{attr}-lt-{$range.name}]) {
+      @media (max-width: $range.start) {
+        content();
+      }
+    }
+  }
+  // attr-gt-[xs,s,m]
+  for $range in $xs $s $m {
+    {selector}([{attr}-gt-{$range.name}]) {
+      @media (min-width: $range.end) {
+        content();
+      }
+    }
+  }
+  // attr-[xs,s,m,l]
+  for $range in $s $m {
+    {selector}([{attr}-{$range.name}]) {
+      @media (max-width: $range.start) and (min-width: $range.end) {
+        content();
+      }
+    }
+  }
+  // attr
+  {selector}([{attr}]) {
+    content();
+  }
+}
+
+:host {
 
   overflow: hidden;
   box-sizing: border-box;
@@ -68,7 +110,7 @@ brick-layout {
     -webkit-flex-direction: row;
     flex-direction: row;
   }
-  responsify("&", horizontal, _horizontal);
+  responsifyHost("&", horizontal, _horizontal);
 
   /**
    *  Flex-children
@@ -79,7 +121,7 @@ brick-layout {
     -webkit-flex: 1;
     flex: 1;
   }
-  responsify("& > ", flex, _flex);
+  responsify("& ::content > ", flex, _flex);
 
   /**
    *  hide
@@ -87,7 +129,7 @@ brick-layout {
   _hide() {
     display: none;
   }
-  responsify("& ", hide, _hide);
+  responsify("& ::content ", hide, _hide);
 
 
   /**
@@ -101,20 +143,20 @@ brick-layout {
     -webkit-transition: -webkit-transform .2s ease;
     transition: transform .2s ease;
   }
-  responsify("& > ", drawer, _drawer)
+  responsify("& ::content > ", drawer, _drawer)
   //show state
-  &[open] {
-    & > [drawer],
-    & > [drawer-lt-{$s.name}],
-    & > [drawer-lt-{$m.name}],
-    & > [drawer-lt-{$l.name}],
-    & > [drawer-gt-{$xs.name}],
-    & > [drawer-gt-{$s.name}],
-    & > [drawer-gt-{$m.name}],
-    & > [drawer-{$xs.name}],
-    & > [drawer-{$s.name}],
-    & > [drawer-{$m.name}],
-    & > [drawer-{$l.name}] {
+  &([open]) {
+    & ::content > [drawer],
+    & ::content > [drawer-lt-{$s.name}],
+    & ::content > [drawer-lt-{$m.name}],
+    & ::content > [drawer-lt-{$l.name}],
+    & ::content > [drawer-gt-{$xs.name}],
+    & ::content > [drawer-gt-{$s.name}],
+    & ::content > [drawer-gt-{$m.name}],
+    & ::content > [drawer-{$xs.name}],
+    & ::content > [drawer-{$s.name}],
+    & ::content > [drawer-{$m.name}],
+    & ::content > [drawer-{$l.name}] {
       -webkit-transform: translate(0,0);
       transform: translate(0,0);
     }
@@ -128,19 +170,19 @@ brick-layout {
     -webkit-transition: -webkit-transform .2s ease;
     transition: transform .2s ease;
   }
-  responsify("& > ", drawer-top, _drawertop)
-  &[open] {
-    & > [drawer-top],
-    & > [drawer-top-lt-{$s.name}],
-    & > [drawer-top-lt-{$m.name}],
-    & > [drawer-top-lt-{$l.name}],
-    & > [drawer-top-gt-{$xs.name}],
-    & > [drawer-top-gt-{$s.name}],
-    & > [drawer-top-gt-{$m.name}],
-    & > [drawer-top-{$xs.name}],
-    & > [drawer-top-{$s.name}],
-    & > [drawer-top-{$m.name}],
-    & > [drawer-top-{$l.name}] {
+  responsify("& ::content > ", drawer-top, _drawertop)
+  &([open]) {
+    & ::content [drawer-top],
+    & ::content [drawer-top-lt-{$s.name}],
+    & ::content [drawer-top-lt-{$m.name}],
+    & ::content [drawer-top-lt-{$l.name}],
+    & ::content [drawer-top-gt-{$xs.name}],
+    & ::content [drawer-top-gt-{$s.name}],
+    & ::content [drawer-top-gt-{$m.name}],
+    & ::content [drawer-top-{$xs.name}],
+    & ::content [drawer-top-{$s.name}],
+    & ::content [drawer-top-{$m.name}],
+    & ::content [drawer-top-{$l.name}] {
       -webkit-transform: translate(0,0);
       transform: translate(0,0);
     }
