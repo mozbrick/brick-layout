@@ -96,10 +96,7 @@ responsifyHost(selector, attr, content) {
   box-orient: vertical;
   position: relative;
   height: 100%
-
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
 
   /**
@@ -107,7 +104,6 @@ responsifyHost(selector, attr, content) {
    *--------------------------------------------------*/
   _horizontal() {
     box-orient: horizontal;
-    -webkit-flex-direction: row;
     flex-direction: row;
   }
   responsifyHost("&", horizontal, _horizontal);
@@ -118,7 +114,6 @@ responsifyHost(selector, attr, content) {
   _flex() {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    -webkit-flex: 1;
     flex: 1;
   }
   responsify("& ::content > ", flex, _flex);
@@ -138,9 +133,7 @@ responsifyHost(selector, attr, content) {
   _drawer() {
     height: 100%;
     position: absolute;
-    -webkit-transform: translate(-100%,0);
     transform: translate(-100%,0);
-    -webkit-transition: -webkit-transform .2s ease;
     transition: transform .2s ease;
   }
   responsify("& ::content > ", drawer, _drawer)
@@ -157,7 +150,6 @@ responsifyHost(selector, attr, content) {
     & ::content > [drawer-{$s.name}],
     & ::content > [drawer-{$m.name}],
     & ::content > [drawer-{$l.name}] {
-      -webkit-transform: translate(0,0);
       transform: translate(0,0);
     }
   }
@@ -165,9 +157,7 @@ responsifyHost(selector, attr, content) {
   _drawertop() {
     position: absolute;
     width: 100%;
-    -webkit-transform: translate(0,-100%);
     transform: translate(0,-100%);
-    -webkit-transition: -webkit-transform .2s ease;
     transition: transform .2s ease;
   }
   responsify("& ::content > ", drawer-top, _drawertop)
@@ -183,7 +173,6 @@ responsifyHost(selector, attr, content) {
     & ::content [drawer-top-{$s.name}],
     & ::content [drawer-top-{$m.name}],
     & ::content [drawer-top-{$l.name}] {
-      -webkit-transform: translate(0,0);
       transform: translate(0,0);
     }
   }
