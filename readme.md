@@ -88,7 +88,7 @@ Method          | Description
 
 ##### Description
 
-* Headerbar on the top of the page.
+* Header at the top of the page.
 * Below the Header:
   * Menu on the left side, taking up as much space as the menu items need.
   * Content taking up the rest of the space.
