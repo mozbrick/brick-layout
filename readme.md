@@ -88,7 +88,7 @@ Method          | Description
 
 ##### Description
 
-* Headerbar on the top of the page.
+* Header at the top of the page.
 * Below the Header:
   * Menu on the left side, taking up as much space as the menu items need.
   * Content taking up the rest of the space.
@@ -194,7 +194,7 @@ html, body {
 
 ##### Description
 
-* Headerbar on the top of the page.
+* Header at the top of the page.
 * Below the Header:
   * Menu on the left side, turns into a drawer when the page-width is below 768px.
   * Menu-Button to control the Menu when the page-width is below 768px.
@@ -253,7 +253,7 @@ html, body {
 
 #### Tabs
 
-* Headerbar on the top of the page.
+* Header at the top of the page.
 * Below the Header:
   * Menu on the left side, turns into a tabbar at the bottom of the page when the page-width is below 768px.
   * Content taking up the rest of the space.
